@@ -2,6 +2,7 @@ ASSEMBLY_NAME = Mono.Zeroconf.Providers.AvahiDBus
 ASSEMBLY = $(ASSEMBLY_NAME).dll
 
 MONO_ZEROCONF_PROVIDERS_AVAHI_SRC =  \
+	../AssemblyInfo.cs \
 	Mono.Zeroconf.Providers.AvahiDBus/AvahiServerState.cs \
 	Mono.Zeroconf.Providers.AvahiDBus/AvahiUtils.cs \
 	Mono.Zeroconf.Providers.AvahiDBus/BrowseService.cs \
@@ -22,9 +23,7 @@ MONO_ZEROCONF_PROVIDERS_AVAHI_SRC =  \
 	Mono.Zeroconf.Providers.AvahiDBus/TxtRecord.cs \
 	Mono.Zeroconf.Providers.AvahiDBus/ZeroconfProvider.cs
 
-SOURCES = \
-	$(top_srcdir)/src/AssemblyInfo.cs \
-	$(foreach source,$(MONO_ZEROCONF_PROVIDERS_AVAHI_SRC),$(srcdir)/$(source))
+SOURCES = $(MONO_ZEROCONF_PROVIDERS_AVAHI_SRC)
 
 if BUILD_AVAHI
 
@@ -35,6 +34,8 @@ all: $(ASSEMBLY)
 
 $(ASSEMBLY): $(top_builddir)/src/Mono.Zeroconf/Mono.Zeroconf.dll $(SOURCES)
 	$(MCS) -unsafe -debug -target:library -out:$@ -r:$< $(AVAHI_LIBS) $(SOURCES)
+
+$(ASSEMBLY).mdb: $(ASSEMBLY)
 
 endif
 

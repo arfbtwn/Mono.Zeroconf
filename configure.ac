@@ -1,6 +1,7 @@
 AC_INIT([Mono.Zeroconf], [0.9.0])
 AC_CANONICAL_SYSTEM
 AC_PREREQ(2.13)
+AC_CONFIG_MACRO_DIR([.])
 AM_INIT_AUTOMAKE([1.9 dist-bzip2 tar-ustar dist-zip])
 AM_MAINTAINER_MODE
 

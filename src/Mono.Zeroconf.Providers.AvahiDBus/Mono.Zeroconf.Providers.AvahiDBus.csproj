@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{EF6ED6D1-D201-42ED-B680-5A77641BEB77}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Mono.Zeroconf.Providers.AvahiDBus</AssemblyName>
@@ -19,12 +18,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\Mono.Zeroconf\Mono.Zeroconf.csproj">
-      <Project>{EF6ED6D1-D201-42ED-B680-5A77641BEB77}</Project>
-      <Name>Mono.Zeroconf</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="dbus-sharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5675b0c3093115b5">
@@ -52,12 +45,18 @@
     <Compile Include="Mono.Zeroconf.Providers.AvahiDBus\EntryGroupState.cs" />
     <Compile Include="Mono.Zeroconf.Providers.AvahiDBus\ErrorCode.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mono.Zeroconf\Mono.Zeroconf.csproj">
+      <Project>{5CF88E3A-13DD-4114-BAD9-DA826946516F}</Project>
+      <Name>Mono.Zeroconf</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
         <Deployment.LinuxDeployData generateScript="false" />
-        <MonoDevelop.Autotools.MakefileInfo IntegrationEnabled="true" RelativeMakefileName="Makefile.am" IsAutotoolsProject="true" RelativeConfigureInPath="../..">
-          <BuildFilesVar Sync="true" Name="MONO_ZEROCONF_PROVIDERS_AVAHI_SRC" />
+        <MonoDevelop.Autotools.MakefileInfo IntegrationEnabled="True" RelativeMakefileName="Makefile.am" IsAutotoolsProject="True" RelativeConfigureInPath="../..">
+          <BuildFilesVar Sync="True" Name="MONO_ZEROCONF_PROVIDERS_AVAHI_SRC" />
           <DeployFilesVar />
           <ResourcesVar />
           <OthersVar />
